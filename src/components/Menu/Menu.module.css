@@ -1,0 +1,76 @@
+/* src/components/Menu/Menu.module.css */
+
+.menuContainer {
+    padding: 80px;
+    background-color: #f8f2e0;;
+  }
+  
+  .title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #5e4433;
+  }
+  
+  .categoryContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .categoryButton {
+    background-color: #e0d4c2;
+    color: #5e4433;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .categoryButton:hover,
+  .categoryButton.active {
+    background-color: #5e4433;
+    color: #f4f4f4;
+  }
+  
+  .itemsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .menuItem {
+    background-color: #f4f4f4;
+    border: 1px solid #e0d4c2;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    width: calc(33% - 40px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .menuItem:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .menuItem h2 {
+    font-size: 24px;
+    color: #5e4433;
+  }
+  
+  .menuItem p {
+    font-size: 16px;
+    color: #7e6453;
+  }
+  
+  .price {
+    font-size: 20px;
+    color: #5e4433;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+  }
+  

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import { Link, Routes, Route } from "react-router-dom";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
@@ -13,6 +14,8 @@ function Navbar() {
   const provider = new GoogleAuthProvider();
   const [{ user, cartShow }, dispatch] = useStateValue();
   const [error, setError] = useState(null);
+  const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const login = async () => {
     try {
@@ -25,7 +28,7 @@ function Navbar() {
           user: providerData[0],
         });
         localStorage.setItem("user", JSON.stringify(providerData[0]));
-        setError(null); // Clear any previous errors
+        setError(null);
       } else {
         localStorage.clear();
         dispatch({
@@ -51,18 +54,20 @@ function Navbar() {
   };
 
   useEffect(() => {
-    if (error) {
-      const timer = setTimeout(() => {
-        setError(null);
-      }, 2000);
-      return () => clearTimeout(timer);
-    }
-  }, [error]);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <div className={styles.nav}>
+    <div className={`${styles.nav} ${isScrolled || location.pathname !== '/' ? styles.expanded : styles.default}`}>
       <div className={styles.logo}>BREWS</div>
-      <ul>
+      <ul className={styles.navList}>
         <Link to="/" className={styles.nav_items}>HOME</Link>
         <Link to="/menu" className={styles.nav_items}>MENU</Link>
         <Link to="/about" className={styles.nav_items}>ABOUT US</Link>

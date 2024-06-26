@@ -1,0 +1,127 @@
+.aboutUsContainer {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: #f8f2e0; /* Cremish background color */
+    color: #4b2e1e; /* Brown text color */
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .header {
+    margin-bottom: 50px;
+    animation: fadeInDown 1s ease-in-out;
+  }
+  
+  .title {
+    font-size: 3rem;
+    color: #4b2e1e; /* Brown text color */
+    margin-bottom: 20px;
+  }
+  
+  .description {
+    font-size: 1.5rem;
+    color: #5a3a2d; /* Slightly darker brown for description */
+    margin-bottom: 40px;
+  }
+  
+  .content {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  .text {
+    font-size: 1.2rem;
+    color: #5a3a2d; /* Slightly darker brown for text */
+    margin-bottom: 30px;
+    line-height: 1.6;
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  .subTitle {
+    font-size: 2rem;
+    color: #4b2e1e; /* Brown text color */
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  .team {
+    margin-top: 50px;
+  }
+  
+  .teamGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .teamMember {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  .teamMember:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .teamMemberImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .teamMemberName {
+    font-size: 1.2rem;
+    color: #4b2e1e; /* Brown text color */
+    margin-bottom: 5px;
+  }
+  
+  .teamMemberRole {
+    font-size: 1rem;
+    color: #7c5b4d; /* Lighter brown for role */
+  }
+  
+  .teamMemberBio {
+    font-size: 1rem;
+    color: #5a3a2d; /* Slightly darker brown for bio */
+    margin-top: 10px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
